@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeHangar | Aircraft Safety System</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="loginScreen" class="login-screen">
+  <div class="login-hero">
+    <div class="hero-overlay">
+      <div class="brand">
+        <img src="assets/logo.png" alt="SafeHangar logo">
+      </div>
+
+      <div class="hero-content">
+        <span class="hero-tag">AVIATION SAFETY MANAGEMENT</span>
+        <h2>Safety starts<br>on the ground.</h2>
+        <p>
+          A smarter approach to hangar safety, hazard reporting,
+          and maintenance environment monitoring.
+        </p>
+      </div>
+
+      <div class="hero-footer">
+        Aircraft Maintenance Safety Management System
+      </div>
+    </div>
+  </div>
+
+  <div class="login-panel">
+    <div class="login-card">
+      <div class="login-logo">
+        <img src="assets/logo.png" alt="SafeHangar logo">
+      </div>
+
+      <p class="login-welcome">Welcome back</p>
+      <p class="login-subtitle">
+        Sign in to your safety management workspace.
+      </p>
+
+      <form id="loginForm">
+        <label for="loginEmail">Email address</label>
+        <input
+          type="email"
+          id="loginEmail"
+          placeholder="name@company.com"
+          required
+        >
+
+        <label for="loginPassword">Password</label>
+        <div class="password-wrapper">
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Enter your password"
+            required
+          >
+          <button type="button" id="togglePassword">Show</button>
+        </div>
+
+        <div class="login-options">
+          <label class="remember-label">
+            <input type="checkbox" id="rememberMe">
+            Remember me
+          </label>
+          <a href="#" id="forgotPassword">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="login-button">
+          Sign In
+        </button>
+
+        <p id="loginError" class="login-error"></p>
+      </form>
+
+      <div class="login-divider"></div>
+
+      <p class="login-security">
+        <span>🔒</span> Authorized personnel only
+      </p>
+    </div>
+
+    <div class="login-bottom">
+      © 2026 SafeHangar · Aviation Safety System
+    </div>
+  </div>
+</div>
+
+<div id="dashboardApp" style="display:none">
+  <!-- Your existing sidebar, dashboard, pages and footer go here -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img class="brand-logo" src="assets/logo.png" alt="SafeHangar logo" width="46" height="46">
+      <div><strong>SAFEHANGAR</strong><small>AIRCRAFT SAFETY SYSTEM</small></div>
+    </div>
+    <nav>
+      <p class="nav-label">WORKSPACE</p>
+      <a class="nav-link active" href="#dashboard" data-page="dashboard">▦ <span>Dashboard</span></a>
+      <a class="nav-link" href="#aircraft" data-page="aircraft">✈ <span>Aircraft</span></a>
+      <a class="nav-link" href="#inspections" data-page="inspections">☑ <span>Inspections</span></a>
+      <a class="nav-link" href="#reports" data-page="reports">▤ <span>Reports</span></a>
+      <a class="nav-link" href="#hazards" data-page="hazards">⚠ <span>Hazard Reports</span></a>
+      <a class="nav-link" href="#facilities" data-page="facilities">⌂ <span>Hangar Directory</span></a>
+      <a class="nav-link" href="#alerts" data-page="alerts">⚑ <span>Safety Alerts</span><i id="alertNavCount">2</i></a>
+      <p class="nav-label second">SYSTEM</p>
+      <a class="nav-link" href="#users" data-page="users">♙ <span>Users</span></a>
+      <a class="nav-link" href="#settings" data-page="settings">⚙ <span>Settings</span></a>
+    </nav>
+    <div class="sidebar-bottom"><div class="avatar">JM</div><div><strong>System Admin</strong><small>Administrator</small></div></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div><span class="eyebrow">AIRCRAFT MAINTENANCE PLATFORM</span><h1 id="pageTitle">Dashboard</h1></div>
+      <div class="top-actions"><span class="status-dot"></span><span class="online">System online</span><button class="icon-btn" aria-label="Notifications" onclick="showPage('alerts')">♧</button><div class="avatar">JM</div></div>
+    </header>
+
+    <section id="dashboard" class="page active-page">
+      <div class="welcome">
+        <div><span class="eyebrow light">SUNDAY, NOVEMBER 15, 2026</span><h2>Welcome back, Admin.</h2><p>Here is the current overview of your hangar inspection activities.</p></div>
+        <button class="primary-btn" onclick="showPage('inspections')">＋ New inspection</button>
+      </div>
+      <div class="stat-grid">
+        <article class="stat-card"><span class="stat-icon blue">✈</span><p>Registered aircraft</p><strong id="aircraftCount">12</strong><small>Aircraft in the system</small></article>
+        <article class="stat-card"><span class="stat-icon amber">◷</span><p>Pending inspections</p><strong>08</strong><small>Awaiting inspection</small></article>
+        <article class="stat-card"><span class="stat-icon green">✓</span><p>Completed inspections</p><strong>34</strong><small>This month</small></article>
+        <article class="stat-card"><span class="stat-icon red">⚑</span><p>Open safety alerts</p><strong id="alertCount">02</strong><small>Require attention</small></article>
+      </div>
+      <div class="content-grid">
+        <article class="panel">
+          <div class="panel-heading"><div><h3>Recent inspections</h3><p>Latest aircraft inspection records</p></div><button class="text-btn" onclick="showPage('inspections')">View all →</button></div>
+          <div class="table-wrap"><table><thead><tr><th>AIRCRAFT</th><th>INSPECTION TYPE</th><th>DATE</th><th>STATUS</th></tr></thead><tbody>
+            <tr><td><strong>RP-C1234</strong><small>Cessna 172</small></td><td>Pre-flight check</td><td>Nov 15, 2026</td><td><span class="pill success">Passed</span></td></tr>
+            <tr><td><strong>RP-C5678</strong><small>Piper PA-28</small></td><td>Engine inspection</td><td>Nov 14, 2026</td><td><span class="pill warning">Needs review</span></td></tr>
+            <tr><td><strong>RP-C9012</strong><small>Cessna 152</small></td><td>Structural check</td><td>Nov 13, 2026</td><td><span class="pill danger">Failed</span></td></tr>
+          </tbody></table></div>
+        </article>
+        <article class="panel alert-panel"><div class="panel-heading"><div><h3>Safety alerts</h3><p>Items requiring attention</p></div><span class="alert-badge" id="alertBadge">2 OPEN</span></div>
+          <div class="alert-item"><span class="alert-symbol red-bg">!</span><div><strong>Engine component requires review</strong><p>RP-C5678 · Engine inspection</p><small>Today, 9:42 AM</small></div></div>
+          <div class="alert-item"><span class="alert-symbol amber-bg">!</span><div><strong>Structural defect recorded</strong><p>RP-C9012 · Structural check</p><small>Yesterday, 3:15 PM</small></div></div>
+          <button class="outline-btn full" onclick="showPage('alerts')">Review all alerts</button>
+        </article>
+      </div>
+      <article class="panel quick-panel"><div class="panel-heading"><div><h3>Quick actions</h3><p>Common tasks</p></div></div><div class="quick-actions">
+        <button onclick="showPage('aircraft')"><b>＋</b><span><strong>Register aircraft</strong><small>Add an aircraft record</small></span></button>
+        <button onclick="showPage('inspections')"><b>☑</b><span><strong>Start inspection</strong><small>Record a new inspection</small></span></button>
+        <button onclick="showPage('hazards')"><b>⚠</b><span><strong>Report hazard</strong><small>Log a hangar incident</small></span></button>
+        <button onclick="showPage('reports')"><b>▤</b><span><strong>View reports</strong><small>Review inspection history</small></span></button>
+      </div></article>
+    </section>
+
+    <section id="aircraft" class="page">
+      <div class="page-intro"><div><h2>Aircraft registry</h2><p>Manage aircraft registered in SafeHangar.</p></div><button class="primary-btn" onclick="document.getElementById('aircraftForm').classList.toggle('hidden')">＋ Register aircraft</button></div>
+      <form id="aircraftForm" class="panel form-panel hidden"><h3>Register an aircraft</h3><div class="form-grid"><label>Registration number<input id="regNumber" placeholder="e.g. RP-C1234" required></label><label>Aircraft model<input id="model" placeholder="e.g. Cessna 172" required></label><label>Serial number<input id="serial" placeholder="Enter serial number"></label><label>Operator<input id="operator" placeholder="Company or owner"></label></div><button class="primary-btn" type="submit">Save aircraft</button></form>
+      <article class="panel"><div class="panel-heading"><div><h3>Registered aircraft</h3><p>Aircraft records available in the system</p></div><input class="search" id="aircraftSearch" placeholder="Search aircraft..."></div><div class="table-wrap"><table><thead><tr><th>REGISTRATION</th><th>MODEL</th><th>SERIAL NUMBER</th><th>OPERATOR</th><th>STATUS</th></tr></thead><tbody id="aircraftRows"><tr><td><strong>RP-C1234</strong></td><td>Cessna 172</td><td>172-8841</td><td>Training Fleet</td><td><span class="pill success">Active</span></td></tr><tr><td><strong>RP-C5678</strong></td><td>Piper PA-28</td><td>PA28-2291</td><td>Private</td><td><span class="pill success">Active</span></td></tr></tbody></table></div></article>
+    </section>
+
+    <section id="inspections" class="page">
+      <div class="page-intro"><div><h2>Aircraft inspection</h2><p>Create an inspection record and document findings.</p></div></div>
+      <form id="inspectionForm" class="panel form-panel">
+        <h3>New inspection record</h3><div class="form-grid">
+          <label>Aircraft registration<input id="inspectionAircraft" placeholder="e.g. RP-C1234" required></label>
+          <label>Inspection type<select id="inspectionType"><option>Pre-flight inspection</option><option>Engine inspection</option><option>Structural inspection</option><option>Component inspection</option><option>General visual inspection</option></select></label>
+          <label>Inspector name<input id="inspector" placeholder="Enter inspector name" required></label>
+          <label>Inspection date<input id="inspectionDate" type="date" required></label>
+        </div>
+        <h3 class="subheading">Inspection checklist</h3><p class="helper">Select the condition observed for each item. This demo does not replace an approved maintenance checklist.</p>
+        <div class="checklist">
+          <div class="check-row"><strong>Fuselage and exterior surfaces</strong><select class="result-select"><option>Pass</option><option>Fail</option><option>Needs review</option></select></div>
+          <div class="check-row"><strong>Wings and control surfaces</strong><select class="result-select"><option>Pass</option><option>Fail</option><option>Needs review</option></select></div>
+          <div class="check-row"><strong>Engine and visible components</strong><select class="result-select"><option>Pass</option><option>Fail</option><option>Needs review</option></select></div>
+          <div class="check-row"><strong>Landing gear and tires</strong><select class="result-select"><option>Pass</option><option>Fail</option><option>Needs review</option></select></div>
+        </div>
+        <label class="wide-label">Findings / remarks<textarea id="remarks" rows="4" placeholder="Describe any observed defects or remarks..."></textarea></label>
+        <label class="wide-label">Attach inspection photo<input id="photo" type="file" accept="image/*"></label>
+        <button class="primary-btn" type="submit">Save inspection record</button>
+      </form>
+    </section>
+
+    <section id="reports" class="page"><div class="page-intro"><div><h2>Inspection reports</h2><p>Summary of recorded inspections.</p></div><button class="outline-btn" onclick="window.print()">Print / Save as PDF</button></div><article class="panel"><div class="panel-heading"><div><h3>Inspection history</h3><p>Recent submitted inspection records</p></div></div><div class="table-wrap"><table><thead><tr><th>DATE</th><th>AIRCRAFT</th><th>TYPE</th><th>INSPECTOR</th><th>RESULT</th></tr></thead><tbody id="reportRows"><tr><td>Nov 15, 2026</td><td>RP-C1234</td><td>Pre-flight check</td><td>Sample inspector</td><td><span class="pill success">Passed</span></td></tr></tbody></table></div></article></section>
+
+
+    <section id="hazards" class="page">
+      <div class="page-intro"><div><h2>Hazard and incident reports</h2><p>Report unsafe conditions and incidents found in an aircraft hangar.</p></div></div>
+      <form id="hazardForm" class="panel form-panel">
+        <h3>New hazard report</h3>
+        <div class="form-grid">
+          <label>Hazard / incident category<select id="hazardCategory" required></select></label>
+          <label>Severity<select id="hazardSeverity"><option>Low</option><option selected>Medium</option><option>High</option><option>Critical</option></select></label>
+          <label>Hangar facility<select id="hazardFacility"></select></label>
+          <label>Location in hangar<input id="hazardLocation" placeholder="e.g. Bay 2, near the wing stand" required></label>
+          <label>Reported by<input id="hazardReporter" placeholder="Enter your name" required></label>
+          <label>Date observed<input id="hazardDate" type="date" required></label>
+        </div>
+        <div class="example-box" id="hazardExample" aria-live="polite">Select a category to see an example of what to report.</div>
+        <label class="wide-label">Description<textarea id="hazardDescription" rows="4" placeholder="Describe what you saw, who was involved, and any immediate action taken..." required></textarea></label>
+        <label class="wide-label">Attach photo (optional)<input id="hazardPhoto" type="file" accept="image/*"></label>
+        <button class="primary-btn" type="submit">Submit hazard report</button>
+      </form>
+      <article class="panel">
+        <div class="panel-heading"><div><h3>Submitted reports</h3><p>Hazards reported in this session. High and Critical reports also appear in Safety Alerts.</p></div></div>
+        <div class="table-wrap"><table><thead><tr><th>DATE</th><th>CATEGORY</th><th>FACILITY</th><th>LOCATION</th><th>REPORTED BY</th><th>SEVERITY</th></tr></thead><tbody id="hazardRows"><tr id="hazardEmpty"><td colspan="6">No hazard reports yet. Use the form above to submit one.</td></tr></tbody></table></div>
+      </article>
+      <article class="panel">
+        <div class="panel-heading"><div><h3>What to report</h3><p>Common hazards and incidents in an aircraft hangar</p></div><input class="search" id="hazardSearch" placeholder="Search categories..."></div>
+        <div class="table-wrap"><table><thead><tr><th>CATEGORY</th><th>EXAMPLE</th><th></th></tr></thead><tbody id="hazardRef"></tbody></table></div>
+      </article>
+    </section>
+
+    <section id="facilities" class="page">
+      <div class="page-intro"><div><h2>Hangar directory</h2><p>Aircraft maintenance facilities in Metro Manila, Clark and Subic.</p></div></div>
+      <article class="panel">
+        <div class="panel-heading"><div><h3>Facilities</h3><p id="facilityCount">12 facilities</p></div><input class="search" id="facilitySearch" placeholder="Search facilities..."></div>
+        <div class="chips" id="regionChips" role="group" aria-label="Filter by region"></div>
+        <div id="facilityList"></div>
+      </article>
+    </section>
+
+    <section id="alerts" class="page"><div class="page-intro"><div><h2>Safety alerts</h2><p>Review inspection findings and hazard reports that may require follow-up.</p></div></div><article class="panel" id="alertList"><div class="alert-item"><span class="alert-symbol red-bg">!</span><div><strong>Engine component requires review</strong><p>RP-C5678 · Engine inspection</p><small>Open · Today, 9:42 AM</small></div></div><div class="alert-item"><span class="alert-symbol amber-bg">!</span><div><strong>Structural defect recorded</strong><p>RP-C9012 · Structural check</p><small>Open · Yesterday, 3:15 PM</small></div></div></article></section>
+    <section id="users" class="page"><div class="page-intro"><div><h2>User management</h2><p>Manage access for inspectors and administrators.</p></div></div><article class="panel"><h3>Demo user</h3><p>System Admin · Administrator</p></article></section>
+    <section id="settings" class="page"><div class="page-intro"><div><h2>Settings</h2><p>SafeHangar system preferences.</p></div></div><article class="panel"><h3>System information</h3><p>SafeHangar front-end prototype · Version 1.0</p><p class="helper">Connect a secure backend before using real operational or maintenance data.</p></article></section>
+    <footer>© 2026 SafeHangar · Aircraft Safety System <span>Front-end demonstration</span></footer>
+  </main>
+
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

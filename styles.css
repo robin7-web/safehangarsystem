@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--navy:#172d75;--blue:#3159c9;--pale:#eef3ff;--ink:#202b43;--muted:#788399;--line:#e7ebf2;--bg:#f6f8fc}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif;font-size:14px}.sidebar{position:fixed;inset:0 auto 0 0;width:248px;background:#fff;border-right:1px solid var(--line);padding:27px 17px;display:flex;flex-direction:column;z-index:5}.brand{display:flex;align-items:center;gap:11px;padding:0 10px 34px;color:var(--navy);letter-spacing:1px}.brand-mark{width:39px;height:39px;border-radius:12px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:23px}.brand strong{display:block;font-size:16px;font-weight:800}.brand small{display:block;font-size:8px;letter-spacing:1.4px;color:#7d8aa8;margin-top:4px}.nav-label{font-size:10px;font-weight:700;color:#a2aabc;letter-spacing:1.2px;padding:0 12px;margin:0 0 11px}.nav-label.second{margin-top:30px}.nav-link{height:45px;border-radius:9px;display:flex;align-items:center;gap:13px;padding:0 13px;color:#68748c;text-decoration:none;font-weight:500;margin:3px 0}.nav-link:hover,.nav-link.active{background:#edf2ff;color:var(--blue)}.nav-link i{font-style:normal;margin-left:auto;background:#ffeded;color:#d64c4c;border-radius:20px;padding:3px 7px;font-size:10px}.sidebar-bottom{margin-top:auto;border-top:1px solid var(--line);padding:19px 8px 0;display:flex;align-items:center;gap:10px}.avatar{width:35px;height:35px;border-radius:50%;background:#e7edff;color:var(--navy);display:grid;place-items:center;font-weight:700}.sidebar-bottom strong{font-size:12px;display:block}.sidebar-bottom small{color:var(--muted);font-size:11px}.main{margin-left:248px;padding:0 34px;max-width:1700px}.topbar{height:91px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);margin-bottom:27px}.eyebrow{font-size:9px;color:#8b96aa;font-weight:700;letter-spacing:1.5px}.topbar h1{font-size:23px;margin:5px 0 0}.top-actions{display:flex;align-items:center;gap:12px}.online{font-size:11px;color:#64728a}.status-dot{width:8px;height:8px;border-radius:50%;background:#24b47e}.icon-btn{border:1px solid var(--line);background:#fff;border-radius:9px;width:36px;height:36px;font-size:18px;color:#66738c}.page{display:none}.active-page{display:block}.welcome{background:linear-gradient(110deg,#172d75,#3159c9);color:#fff;border-radius:15px;padding:27px 30px;display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;min-height:154px}.eyebrow.light{color:#c2d1ff}.welcome h2{font-size:24px;margin:9px 0 7px}.welcome p{color:#d8e1ff;margin:0;font-size:12px}.primary-btn{border:0;border-radius:8px;background:#3159c9;color:#fff;padding:12px 17px;font:600 12px Inter;cursor:pointer}.welcome .primary-btn{background:#fff;color:var(--navy)}button{cursor:pointer}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:20px}.stat-card,.panel{background:#fff;border:1px solid var(--line);border-radius:12px}.stat-card{padding:18px}.stat-icon{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-size:17px}.blue{background:#edf2ff;color:#3159c9}.amber{background:#fff5df;color:#d79519}.green{background:#e7f8f0;color:#159866}.red{background:#fff0ef;color:#d9534f}.stat-card p{color:#758198;font-size:11px;margin:14px 0 5px}.stat-card>strong{font-size:27px;display:block}.stat-card small{font-size:10px;color:#a0a8b7}.content-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:17px}.panel{padding:20px;margin-bottom:18px}.panel-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.panel h3,.panel-heading h3{font-size:14px;margin:0 0 5px}.panel-heading p{font-size:11px;color:var(--muted);margin:0}.text-btn{border:0;background:none;color:var(--blue);font:600 11px Inter}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;text-align:left;white-space:nowrap}th{font-size:9px;letter-spacing:.8px;color:#9aa4b5;font-weight:700;padding:11px 9px;border-bottom:1px solid var(--line)}td{font-size:11px;padding:13px 9px;border-bottom:1px solid #f0f2f6;color:#58647a}td strong{display:block;color:#27334b;font-size:11px}td small{display:block;color:#9aa4b5;font-size:10px;margin-top:4px}.pill{padding:5px 9px;border-radius:20px;font-size:9px;font-weight:700}.success{background:#e9f8f0;color:#159866}.warning{background:#fff5df;color:#bd841d}.danger{background:#fff0ef;color:#d9534f}.alert-badge{font-size:9px;color:#d9534f;background:#fff0ef;padding:6px 9px;border-radius:20px;font-weight:700}.alert-item{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid #f0f2f6}.alert-symbol{flex:none;width:29px;height:29px;border-radius:8px;display:grid;place-items:center;font-weight:800}.red-bg{background:#fff0ef;color:#d9534f}.amber-bg{background:#fff5df;color:#bd841d}.alert-item strong{font-size:11px}.alert-item p{font-size:10px;color:#788399;margin:5px 0}.alert-item small{font-size:9px;color:#a1aabb}.outline-btn{border:1px solid #dce3f0;background:#fff;color:#425578;border-radius:8px;padding:10px 13px;font:600 11px Inter}.full{width:100%;margin-top:15px}.quick-panel{margin-top:18px}.quick-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.quick-actions button{display:flex;align-items:center;gap:12px;text-align:left;background:#fafbfe;border:1px solid var(--line);border-radius:9px;padding:14px}.quick-actions button>b{width:34px;height:34px;display:grid;place-items:center;background:#edf2ff;color:var(--blue);border-radius:8px;font-size:18px}.quick-actions strong,.quick-actions small{display:block}.quick-actions strong{font-size:11px}.quick-actions small{font-size:9px;color:var(--muted);margin-top:4px}.page-intro{display:flex;justify-content:space-between;align-items:center;margin:5px 0 20px}.page-intro h2{font-size:21px;margin:0 0 6px}.page-intro p{font-size:11px;color:var(--muted);margin:0}.form-panel h3{margin:0 0 18px}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-bottom:18px}label{display:block;font-size:11px;color:#59667e;font-weight:600}input,select,textarea{display:block;width:100%;margin-top:7px;padding:11px 12px;border:1px solid #dfe5ef;border-radius:7px;background:#fff;color:#34415a;font:11px Inter;outline:none}input:focus,select:focus,textarea:focus{border-color:#6684df}.subheading{padding-top:12px;border-top:1px solid var(--line)}.helper{font-size:10px;color:#8994a7;line-height:1.6}.checklist{border:1px solid var(--line);border-radius:8px;margin:15px 0}.check-row{display:flex;justify-content:space-between;align-items:center;padding:11px 13px;border-bottom:1px solid var(--line);gap:15px}.check-row:last-child{border:0}.check-row strong{font-size:11px}.check-row select{width:145px;margin:0;padding:8px}.wide-label{margin:15px 0}.wide-label input[type=file]{padding:9px}.search{max-width:220px;margin:0}.hidden{display:none}footer{padding:17px 0 25px;color:#9aa4b5;font-size:10px}footer span{float:right}@media(max-width:1050px){.quick-actions{grid-template-columns:repeat(2,1fr)}.sidebar{width:205px}.main{margin-left:205px;padding:0 22px}.stat-grid{grid-template-columns:repeat(2,1fr)}.content-grid{grid-template-columns:1fr}}@media(max-width:700px){.sidebar{position:static;width:auto;height:auto;padding:12px}.brand{padding-bottom:12px}.sidebar nav,.sidebar-bottom{display:none}.main{margin:0;padding:0 14px}.topbar{height:75px}.welcome{padding:22px;align-items:flex-start;gap:15px;flex-direction:column}.stat-grid{gap:9px}.stat-card{padding:13px}.quick-actions{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.page-intro{gap:12px;align-items:flex-start}.top-actions .online,.top-actions .status-dot{display:none}}@media print{.sidebar,.topbar,.primary-btn,.outline-btn,footer{display:none!important}.main{margin:0;padding:0}.page{display:none!important}#reports{display:block!important}.panel{border:0}}
+
+.example-box{background:var(--pale);border-left:3px solid var(--blue);border-radius:6px;padding:11px 14px;font-size:11px;color:#425578;margin:4px 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.chip{border:1px solid #dce3f0;background:#fff;color:#425578;border-radius:20px;padding:7px 13px;font:600 11px Inter}
+.chip.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.region-heading{font-size:12px;color:var(--navy);margin:22px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.facility-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.facility-card{background:#fafbfe;border:1px solid var(--line);border-radius:9px;padding:14px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.facility-card strong{font-size:12px;color:#27334b}
+.facility-card p{margin:0;font-size:11px;color:var(--muted);line-height:1.5}
+.facility-card .text-btn{padding:0;margin-top:auto}
+button:focus-visible,.nav-link:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+@media(max-width:700px){.quick-actions{grid-template-columns:1fr}}
+
+/* Logo + photo backgrounds */
+.brand-logo{width:46px;height:46px;object-fit:contain}
+.brand{gap:12px}
+.welcome{background-image:linear-gradient(105deg,rgba(23,45,117,.96) 0%,rgba(23,45,117,.82) 45%,rgba(49,89,201,.35) 100%),url(assets/hangar-trainees.jpg);background-size:cover;background-position:center 60%}
+.page-intro{--photo:url(assets/engine-inspection.jpg);--pos:center 40%;background-image:linear-gradient(100deg,rgba(23,45,117,.95) 0%,rgba(23,45,117,.80) 55%,rgba(23,45,117,.45) 100%),var(--photo);background-size:cover;background-position:var(--pos);color:#fff;border-radius:15px;padding:26px 30px;min-height:104px}
+.page-intro h2{color:#fff}
+.page-intro p{color:#d8e1ff}
+.page-intro .primary-btn{background:#fff;color:var(--navy)}
+#aircraft .page-intro,#facilities .page-intro{--photo:url(assets/hangar-aircraft.jpg);--pos:center 45%}
+#hazards .page-intro,#alerts .page-intro{--photo:url(assets/hangar-trainees.jpg);--pos:center 55%}
+#inspections .page-intro,#reports .page-intro{--photo:url(assets/engine-inspection.jpg);--pos:center 35%}
+.panel-heading+.table-wrap,.panel{position:relative}
+.sidebar{background-image:linear-gradient(rgba(255,255,255,.93),rgba(255,255,255,.97)),url(assets/hangar-aircraft.jpg);background-size:cover;background-position:center bottom}
+@media print{.page-intro{background:none!important;color:#000!important;padding:0!important;min-height:0}.page-intro h2,.page-intro p{color:#000!important}}
+.login-screen {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  font-family: inherit;
+  background: #fff;
+}
+
+.login-hero {
+  background:
+    linear-gradient(rgba(10, 25, 55, .75),
+    rgba(10, 25, 55, .85)),
+    url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  min-height: 100vh;
+}
+
+.hero-overlay {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 55px;
+  box-sizing: border-box;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  background: #3567b8;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 25px;
+}
+
+.brand h1 {
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+.hero-content {
+  max-width: 550px;
+}
+
+.hero-tag {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #9fc5ff;
+  font-weight: bold;
+}
+
+.hero-content h2 {
+  font-size: clamp(40px, 5vw, 70px);
+  line-height: 1.1;
+  margin: 22px 0;
+}
+
+.hero-content p {
+  color: #d7e1f1;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 430px;
+}
+
+.hero-footer {
+  color: #b8c7df;
+  font-size: 12px;
+}
+
+.login-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 35px;
+  position: relative;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.login-logo span {
+  font-size: 35px;
+  color: #3567b8;
+}
+
+.login-logo h2 {
+  color: #19366c;
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+.login-welcome {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1d2940;
+  margin-bottom: 8px;
+}
+
+.login-subtitle {
+  color: #8993a5;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.login-card form > label {
+  display: block;
+  margin: 18px 0 8px;
+  color: #344258;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.login-card input[type="email"],
+.login-card input[type="password"] {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #dfe5ee;
+  border-radius: 9px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.login-card input:focus {
+  border-color: #3567b8;
+  box-shadow: 0 0 0 3px rgba(53, 103, 184, .10);
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 60px !important;
+}
+
+.password-wrapper button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #3567b8;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  font-size: 12px;
+}
+
+.remember-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #647086;
+}
+
+.login-options a {
+  text-decoration: none;
+  color: #3567b8;
+}
+
+.login-button {
+  width: 100%;
+  padding: 15px;
+  background: #294f98;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.login-button:hover {
+  background: #1c3c78;
+  transform: translateY(-1px);
+}
+
+.login-error {
+  color: #d43d3d;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+.login-divider {
+  border-top: 1px solid #edf0f5;
+  margin: 30px 0;
+}
+
+.login-security {
+  text-align: center;
+  font-size: 12px;
+  color: #8993a5;
+}
+
+.login-bottom {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  color: #a0a8b5;
+  font-size: 11px;
+}
+
+@media(max-width:850px) {
+  .login-screen {
+    grid-template-columns: 1fr;
+  }
+
+  .login-hero {
+    min-height: 320px;
+  }
+
+  .hero-overlay {
+    min-height: 320px;
+    padding: 30px;
+  }
+
+  .hero-content h2 {
+    font-size: 38px;
+  }
+
+  .hero-footer {
+    display: none;
+  }
+
+  .login-panel {
+    padding: 40px 25px 65px;
+  }
+}
+#loginScreen {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 99999;
+  overflow-y: auto;
+  background: white;
+}
+
+#dashboardApp {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+#dashboardApp {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#dashboardApp {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+#dashboardApp main,
+#dashboardApp .main-content,
+#dashboardApp .content,
+#dashboardApp .dashboard-content {
+    margin-top: 0 !important;
+    padding-top: 20px !important;
+    align-self: flex-start !important;
+}
+
+/* Prevent content from being vertically centered */
+#dashboardApp {
+    align-items: flex-start !important;
+}
+
+#dashboardApp main,
+#dashboardApp .main-content {
+    justify-content: flex-start !important;
+}
+#dashboardApp {
+    display: block;
+    min-height: 100vh;
+    height: auto;
+    position: relative;
+    top: 0;
+}
+
+/* Main dashboard layout */
+#dashboardApp .main {
+    margin-left: 248px;
+    padding: 0 34px;
+    position: relative;
+    top: 0;
+    transform: none !important;
+    min-height: 100vh;
+    height: auto;
+}
+
+/* Dashboard header */
+#dashboardApp .topbar {
+    margin-top: 0 !important;
+    height: 91px;
+}
+
+/* Dashboard page content */
+#dashboardApp .page {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Remove unwanted vertical spacing */
+#dashboardApp .active-page {
+    display: block;
+    margin-top: 0 !important;
+}
+
+/* Reset dashboard positioning */
+#dashboardApp * {
+    scroll-margin-top: 0 !important;
+}
+
+/* Keep dashboard at the top */
+html, body {
+    scroll-padding-top: 0;
+}
+
+@media(max-width:1050px) {
+    #dashboardApp .main {
+        margin-left: 205px;
+        padding: 0 22px;
+    }
+}
+
+@media(max-width:700px) {
+    #dashboardApp .main {
+        margin-left: 0;
+        padding: 0 14px;
+    }
+}
+.login-logo img {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+  object-fit: contain;
+}
+.brand-icon img {
+  width: 46px;
+  height: 46px;
+  display: block;
+  object-fit: contain;
+}

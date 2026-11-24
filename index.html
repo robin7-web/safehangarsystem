@@ -220,15 +220,10 @@
 
       <div class="photo-options">
         <label for="inspectionPhoto" class="photo-btn">
-          📁 Choose existing photo
+          📁 Choose photo
         </label>
 
         <input type="file" id="inspectionPhoto" accept="image/*">
-
-        <button type="button" class="photo-btn camera-btn" data-camera-target="inspectionPhoto">
-          📷 Take a photo
-        </button>
-      </div>
 
         <button class="primary-btn" type="submit">Save inspection record</button>
       </form>
@@ -262,18 +257,14 @@
 
           <div class="photo-options">
             <label for="hazardPhoto" class="photo-btn">
-              📁 Choose existing photo
+              📁 Choose photo
             </label>
 
             <input type="file" id="hazardPhoto" accept="image/*">
 
-            <button type="button" class="photo-btn camera-btn" data-camera-target="hazardPhoto">
-              📷 Take a photo
-            </button>
-          </div>
-
         <button class="primary-btn" type="submit">Submit hazard report</button>
       </form>
+    </section>
       <article class="panel">
         <div class="panel-heading"><div><h3>Submitted reports</h3><p>Hazards reported in this session. High and Critical reports also appear in Safety Alerts.</p></div></div>
         <div class="table-wrap"><table><thead><tr><th>DATE</th><th>CATEGORY</th><th>FACILITY</th><th>LOCATION</th><th>REPORTED BY</th><th>SEVERITY</th></tr></thead><tbody id="hazardRows"><tr id="hazardEmpty"><td colspan="6">No hazard reports yet. Use the form above to submit one.</td></tr></tbody></table></div>

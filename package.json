@@ -1,0 +1,21 @@
+{
+  "name": "safehangarsystem",
+  "version": "1.0.0",
+  "description": "SafeHangar Aircraft Safety System",
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'Development server - use Live Server or similar'",
+    "build": "echo 'Static site - no build step required'",
+    "lint": "echo 'No linter configured yet'"
+  },
+  "keywords": [
+    "aviation",
+    "safety",
+    "hangar"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}

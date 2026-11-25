@@ -219,7 +219,7 @@
         <label>Attach inspection photo</label>
 
         <div class="photo-options">
-          <button type="button" class="photo-btn" onclick="chooseInspectionPhoto()">
+          <button type="button" class="photo-btn" onclick="showInspectionPhotoOptions()">
             📷 Attach Photo
           </button>
 
@@ -229,6 +229,19 @@
           <button class="primary-btn" type="submit">
             Save inspection record
           </button>
+        </div>
+
+        <!-- Inspection Photo Options Popup -->
+        <div id="inspectionPhotoModal" class="photo-modal hidden">
+          <div class="photo-modal-content">
+            <h3>Attach Inspection Photo</h3>
+
+            <button type="button" onclick="openInspectionCamera()">📷 Camera</button>
+
+            <button type="button" onclick="openInspectionGallery()">🖼️ Gallery</button>
+
+            <button type="button" onclick="closeInspectionPhotoOptions()">✖ Cancel</button>
+          </div>
         </div>
       </form>
     </section>
@@ -260,24 +273,25 @@
         <label>Attach hazard photo</label>
 
         <div class="photo-options">
-          <button type="button" class="photo-btn" onclick="chooseHazardPhoto()">
+          <button type="button" class="photo-btn" onclick="showHazardPhotoOptions()">
             📷 Attach Photo
           </button>
 
-          <input
-            type="file"
-            id="hazardCamera"
-            accept="image/*"
-            capture="environment"
-            hidden
-          >
+          <input type="file" id="hazardCamera" accept="image/*" capture="environment" hidden>
+          <input type="file" id="hazardGallery" accept="image/*" hidden>
+        </div>
 
-          <input
-            type="file"
-            id="hazardGallery"
-            accept="image/*"
-            hidden
-          >
+        <!-- Hazard Photo Options Popup -->
+        <div id="hazardPhotoModal" class="photo-modal hidden">
+          <div class="photo-modal-content">
+            <h3>Attach Hazard Photo</h3>
+
+            <button type="button" onclick="openHazardCamera()">📷 Camera</button>
+
+            <button type="button" onclick="openHazardGallery()">🖼️ Gallery</button>
+
+            <button type="button" onclick="closeHazardPhotoOptions()">✖ Cancel</button>
+          </div>
         </div>
       </form>
     </section>

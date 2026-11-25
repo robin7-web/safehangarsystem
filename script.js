@@ -637,28 +637,40 @@ function updateDashboardDate() {
     });
 }
 
-function chooseInspectionPhoto() {
-    const choice = prompt(
-        "Attach Inspection Photo:\n1 - Camera\n2 - Gallery\n3 - Cancel"
-    );
-
-    if (choice === "1") {
-        document.getElementById("inspectionCamera").click();
-    } else if (choice === "2") {
-        document.getElementById("inspectionGallery").click();
-    }
+function showInspectionPhotoOptions() {
+    document.getElementById("inspectionPhotoModal").classList.remove("hidden");
 }
 
-function chooseHazardPhoto() {
-    const choice = prompt(
-        "Attach Hazard Photo:\n1 - Camera\n2 - Gallery\n3 - Cancel"
-    );
+function openInspectionCamera() {
+    closeInspectionPhotoOptions();
+    document.getElementById("inspectionCamera").click();
+}
 
-    if (choice === "1") {
-        document.getElementById("hazardCamera").click();
-    } else if (choice === "2") {
-        document.getElementById("hazardGallery").click();
-    }
+function openInspectionGallery() {
+    closeInspectionPhotoOptions();
+    document.getElementById("inspectionGallery").click();
+}
+
+function closeInspectionPhotoOptions() {
+    document.getElementById("inspectionPhotoModal").classList.add("hidden");
+}
+
+function showHazardPhotoOptions() {
+    document.getElementById("hazardPhotoModal").classList.remove("hidden");
+}
+
+function openHazardCamera() {
+    closeHazardPhotoOptions();
+    document.getElementById("hazardCamera").click();
+}
+
+function openHazardGallery() {
+    closeHazardPhotoOptions();
+    document.getElementById("hazardGallery").click();
+}
+
+function closeHazardPhotoOptions() {
+    document.getElementById("hazardPhotoModal").classList.add("hidden");
 }
 
 updateDashboardDate();

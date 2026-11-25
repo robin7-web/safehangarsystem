@@ -227,7 +227,7 @@
           <input type="file" id="inspectionGallery" accept="image/*" hidden>
 
           <button class="primary-btn" type="submit">
-           Save inspection record
+            Save inspection record
           </button>
         </div>
       </form>
@@ -257,19 +257,27 @@
         </div>
         <div class="example-box" id="hazardExample" aria-live="polite">Select a category to see an example of what to report.</div>
         <label class="wide-label">Description<textarea id="hazardDescription" rows="4" placeholder="Describe what you saw, who was involved, and any immediate action taken..." required></textarea></label>
-        <label>Attach inspection photo</label>
+        <label>Attach hazard photo</label>
 
         <div class="photo-options">
           <button type="button" class="photo-btn" onclick="chooseHazardPhoto()">
             📷 Attach Photo
           </button>
 
-          <input type="file" id="hazardCamera" accept="image/*" capture="environment" hidden>
-          <input type="file" id="hazardGallery" accept="image/*" hidden>
+          <input
+            type="file"
+            id="hazardCamera"
+            accept="image/*"
+            capture="environment"
+            hidden
+          >
 
-          <button class="primary-btn" type="submit">
-            Save inspection record
-          </button>
+          <input
+            type="file"
+            id="hazardGallery"
+            accept="image/*"
+            hidden
+          >
         </div>
       </form>
     </section>

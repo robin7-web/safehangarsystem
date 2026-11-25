@@ -638,21 +638,25 @@ function updateDashboardDate() {
 }
 
 function chooseInspectionPhoto() {
-    const choice = confirm("Press OK to use Camera, or Cancel to choose from Gallery.");
+    const choice = prompt(
+        "Attach Inspection Photo:\n1 - Camera\n2 - Gallery\n3 - Cancel"
+    );
 
-    if (choice) {
+    if (choice === "1") {
         document.getElementById("inspectionCamera").click();
-    } else {
+    } else if (choice === "2") {
         document.getElementById("inspectionGallery").click();
     }
 }
 
 function chooseHazardPhoto() {
-    const choice = confirm("Press OK to use Camera, or Cancel to choose from Gallery.");
+    const choice = prompt(
+        "Attach Hazard Photo:\n1 - Camera\n2 - Gallery\n3 - Cancel"
+    );
 
-    if (choice) {
+    if (choice === "1") {
         document.getElementById("hazardCamera").click();
-    } else {
+    } else if (choice === "2") {
         document.getElementById("hazardGallery").click();
     }
 }

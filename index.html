@@ -218,14 +218,18 @@
         <label class="wide-label">Findings / remarks<textarea id="remarks" rows="4" placeholder="Describe any observed defects or remarks..."></textarea></label>
         <label>Attach inspection photo</label>
 
-      <div class="photo-options">
-        <label for="inspectionPhoto" class="photo-btn">
-          📁 Choose photo
-        </label>
+        <div class="photo-options">
+          <button type="button" class="photo-btn" onclick="chooseInspectionPhoto()">
+            📷 Attach Photo
+          </button>
 
-        <input type="file" id="inspectionPhoto" accept="image/*">
+          <input type="file" id="inspectionCamera" accept="image/*" capture="environment" hidden>
+          <input type="file" id="inspectionGallery" accept="image/*" hidden>
 
-        <button class="primary-btn" type="submit">Save inspection record</button>
+          <button class="primary-btn" type="submit">
+           Save inspection record
+          </button>
+        </div>
       </form>
     </section>
 
@@ -253,16 +257,20 @@
         </div>
         <div class="example-box" id="hazardExample" aria-live="polite">Select a category to see an example of what to report.</div>
         <label class="wide-label">Description<textarea id="hazardDescription" rows="4" placeholder="Describe what you saw, who was involved, and any immediate action taken..." required></textarea></label>
-        <label>Attach hazard photo</label>
+        <label>Attach inspection photo</label>
 
-          <div class="photo-options">
-            <label for="hazardPhoto" class="photo-btn">
-              📁 Choose photo
-            </label>
+        <div class="photo-options">
+          <button type="button" class="photo-btn" onclick="chooseHazardPhoto()">
+            📷 Attach Photo
+          </button>
 
-            <input type="file" id="hazardPhoto" accept="image/*">
+          <input type="file" id="hazardCamera" accept="image/*" capture="environment" hidden>
+          <input type="file" id="hazardGallery" accept="image/*" hidden>
 
-        <button class="primary-btn" type="submit">Submit hazard report</button>
+          <button class="primary-btn" type="submit">
+            Save inspection record
+          </button>
+        </div>
       </form>
     </section>
       <article class="panel">

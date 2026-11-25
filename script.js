@@ -604,104 +604,25 @@ if (brandHome) {
   });
 }
 
+
 // ===============================
-// CAMERA CAPTURE FOR INSPECTIONS
-// AND HAZARD REPORTS
+// PHOTO UPLOAD - CAMERA AND GALLERY
 // ===============================
 
-let cameraStream = null;
-let cameraTargetInput = null;
+const inspectionPhoto = document.getElementById("inspectionPhoto");
+const hazardPhoto = document.getElementById("hazardPhoto");
 
-const cameraModal = document.getElementById("cameraModal");
-const cameraVideo = document.getElementById("cameraVideo");
-const cameraCanvas = document.getElementById("cameraCanvas");
-const capturePhotoBtn = document.getElementById("capturePhotoBtn");
-const closeCameraBtn = document.getElementById("closeCameraBtn");
+// Allow users to select a photo
+[inspectionPhoto, hazardPhoto].forEach(input => {
+    if (!input) return;
 
-// Open camera
-document.querySelectorAll(".camera-btn").forEach(button => {
-    button.addEventListener("click", async () => {
-        cameraTargetInput = document.getElementById(
-            button.dataset.cameraTarget
-        );
-
-        try {
-            cameraStream = await navigator.mediaDevices.getUserMedia({
-                video: { facingMode: "environment" },
-                audio: false
-            });
-
-            cameraVideo.srcObject = cameraStream;
-            cameraModal.classList.remove("hidden");
-
-        } catch (err) {
-            alert("Unable to access camera: " + err.message);
+    input.addEventListener("change", () => {
+        if (input.files.length > 0) {
+            notify("Photo selected: " + input.files[0].name);
         }
     });
 });
 
-// Capture photo
-if (capturePhotoBtn) {
-    capturePhotoBtn.addEventListener("click", () => {
-        if (!cameraTargetInput || !cameraVideo.videoWidth) {
-            alert("Camera is not ready.");
-            return;
-        }
-        
-    cameraCanvas.width = cameraVideo.videoWidth;
-    cameraCanvas.height = cameraVideo.videoHeight;
-
-    const context = cameraCanvas.getContext("2d");
-
-    context.drawImage(
-        cameraVideo,
-        0,
-        0,
-        cameraCanvas.width,
-        cameraCanvas.height
-    );
-
-    cameraCanvas.toBlob(blob => {
-        if (!blob) {
-            alert("Failed to capture photo.");
-            return;
-        }
-
-        const file = new File(
-            [blob],
-            "SafeHangar-" + Date.now() + ".jpg",
-            { type: "image/jpeg" }
-        );
-
-        const transfer = new DataTransfer();
-        transfer.items.add(file);
-
-        cameraTargetInput.files = transfer.files;
-
-        cameraTargetInput.dispatchEvent(
-            new Event("change", { bubbles: true })
-        );
-
-        closeCamera();
-        }, "image/jpeg", 0.90);
-    });
-}
-
-// Close camera
-function closeCamera() {
-    if (cameraStream) {
-        cameraStream.getTracks().forEach(track => track.stop());
-        cameraStream = null;
-    }
-
-    cameraVideo.srcObject = null;
-    cameraModal.classList.add("hidden");
-}
-
-// Cancel button
-if (closeCameraBtn) {
-    closeCameraBtn.addEventListener("click", closeCamera);
-}
 
 function updateDashboardDate() {
     const dateElement = document.getElementById("dashboardDate");
@@ -714,6 +635,26 @@ function updateDashboardDate() {
         month: "long",
         day: "numeric"
     });
+}
+
+function chooseInspectionPhoto() {
+    const choice = confirm("Press OK to use Camera, or Cancel to choose from Gallery.");
+
+    if (choice) {
+        document.getElementById("inspectionCamera").click();
+    } else {
+        document.getElementById("inspectionGallery").click();
+    }
+}
+
+function chooseHazardPhoto() {
+    const choice = confirm("Press OK to use Camera, or Cancel to choose from Gallery.");
+
+    if (choice) {
+        document.getElementById("hazardCamera").click();
+    } else {
+        document.getElementById("hazardGallery").click();
+    }
 }
 
 updateDashboardDate();
